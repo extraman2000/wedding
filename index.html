@@ -212,3 +212,80 @@ footer p{font-size:13px;letter-spacing:2px}
     &lt;input type=&quot;text&quot; name=&quot;Имя&quot; placeholder=&quot;Введите ваше имя&quot; required&gt;
   &lt;/div&gt;
 </code></pre>
+    <div class="field">
+    <label>Сообщение для жениха и невесты</label>
+    <textarea name="Сообщение" rows="3"></textarea>
+  </div>
+  <div class="q">
+    <p>Потребуется ли вам трансфер?</p>
+    <div class="opt"><label><input type="radio" name="Трансфер" value="Нет"> Нет</label></div>
+    <div class="opt"><label><input type="radio" name="Трансфер" value="Только до"> Только до торжества</label></div>
+    <div class="opt"><label><input type="radio" name="Трансфер" value="Только после"> Только после торжества</label></div>
+    <div class="opt"><label><input type="radio" name="Трансфер" value="До и после"> До и после торжества</label></div>
+  </div>
+  <div class="q">
+    <p>Есть ли особые предпочтения по еде?</p>
+    <div class="opt"><label><input type="radio" name="Еда" value="Нет"> Нет</label></div>
+    <div class="opt"><label><input type="radio" name="Еда" value="Не ем мясо"> Не ем мясо</label></div>
+    <div class="opt"><label><input type="radio" name="Еда" value="Не ем рыбу"> Не ем рыбу</label></div>
+    <div class="opt"><label><input type="radio" name="Еда" value="Вегетарианец"> Вегетарианец</label></div>
+  </div>
+  <div class="q">
+    <p>Какой алкоголь вы предпочитаете?</p>
+    <div class="opt"><label><input type="checkbox" name="Алкоголь" value="Красное вино"> Красное вино</label></div>
+    <div class="opt"><label><input type="checkbox" name="Алкоголь" value="Белое вино"> Белое вино</label></div>
+    <div class="opt"><label><input type="checkbox" name="Алкоголь" value="Шампанское"> Шампанское</label></div>
+    <div class="opt"><label><input type="checkbox" name="Алкоголь" value="Виски/коньяк"> Виски / коньяк</label></div>
+    <div class="opt"><label><input type="checkbox" name="Алкоголь" value="Водка"> Водка</label></div>
+    <div class="opt"><label><input type="checkbox" name="Алкоголь" value="Без алкоголя"> Не буду пить алкоголь</label></div>
+  </div>
+  <div class="q">
+    <p>Будет ли с вами ребёнок?</p>
+    <div class="opt"><label><input type="radio" name="Ребёнок" value="Да"> Да</label></div>
+    <div class="opt"><label><input type="radio" name="Ребёнок" value="Нет"> Нет</label></div>
+  </div>
+  <div class="q">
+    <p>Останетесь ли на банные процедуры?</p>
+    <div class="opt"><label><input type="radio" name="Баня" value="Да"> Да</label></div>
+    <div class="opt"><label><input type="radio" name="Баня" value="Нет"> Нет</label></div>
+  </div>
+  <button type="submit" class="btn">Подтвердить</button>
+</form>
+<section id="map">
+  <div class="glass">
+    <h2>Как добраться</h2>
+    <div class="orn"><span>✿</span></div>
+    <div class="place">
+      <h3>Дворец бракосочетания № 1</h3>
+      <div class="addr">Санкт-Петербург, Английская набережная, 28</div>
+      <iframe class="map" src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург, Английская набережная, 28&amp;z=17"></iframe>
+    </div>
+    <div class="place">
+      <h3>База отдыха «Дача у Озера»</h3>
+      <div class="addr">деревня Удальцово, Светлановская улица, 29</div>
+      <iframe class="map" src="https://yandex.ru/map-widget/v1/?text=Удальцово, Светлановская улица, 29&amp;z=16"></iframe>
+    </div>
+    <p>Даже такой день может когда-то подойти к концу</p>
+    <div class="heart">❤</div>
+  </div>
+</section>
+<footer>
+  <div class="mono">A&amp;M</div>
+  <p>© 2026 — Александр и Мария</p>
+</footer>
+<script>
+var target = new Date(2026, 8, 5, 20, 20, 0).getTime();
+function tick(){
+  var diff = target - new Date().getTime();
+  if(diff < 0) diff = 0;
+  document.getElementById('d').textContent = Math.floor(diff/(1000*60*60*24));
+  document.getElementById('h').textContent = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  document.getElementById('m').textContent = Math.floor((diff%(1000*60*60))/(1000*60));
+  document.getElementById('s').textContent = Math.floor((diff%(1000*60))/1000);
+}
+tick(); setInterval(tick, 1000);
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('show'); });
+}, {threshold:0.1});
+document.querySelectorAll('section').forEach(function(s){ obs.observe(s); });
+</script>
