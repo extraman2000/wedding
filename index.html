@@ -13,31 +13,18 @@
   &ndash;script:&lsquo;Marck Script&rsquo;,cursive;
   &ndash;sans:&lsquo;Jost&rsquo;,Arial,sans-serif;
 }
-<em>{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   font-family:var(&ndash;sans);color:var(&ndash;text);line-height:1.7;
-  background:
-    radial-gradient(circle at 15% 8%, rgba(200,180,155,.25) 0%, transparent 35%),
-    radial-gradient(circle at 85% 92%, rgba(156,175,136,.22) 0%, transparent 40%),
-    linear-gradient(180deg,#f7f3ec 0%,#efe9df 100%);
-  background-attachment:fixed;
+  background:linear-gradient(rgba(247,243,236,.55),rgba(239,233,223,.6)), url(&lsquo;fon.jpg&rsquo;);
+  background-size:cover;background-position:center;background-attachment:fixed;
 }
-/</em> Декоративные цветы по краям */
-body:before,body:after{
-  content:&ldquo;&rdquo;;position:fixed;width:230px;height:230px;z-index:0;pointer-events:none;
-  background:radial-gradient(circle at 30% 30%, rgba(200,160,170,.35), transparent 60%),
-             radial-gradient(circle at 70% 60%, rgba(156,175,136,.35), transparent 60%);
-  filter:blur(2px);opacity:.6;
-}
-body:before{top:-40px;left:-60px;transform:rotate(20deg)}
-body:after{bottom:-40px;right:-60px;transform:rotate(-160deg)}</p>
-<p>.flower{position:absolute;font-size:26px;opacity:.5;color:var(&ndash;accent);pointer-events:none}</p>
+.flower{position:absolute;font-size:26px;opacity:.5;color:var(&ndash;accent);pointer-events:none;z-index:1}</p>
 <p>section{position:relative;z-index:2;padding:70px 20px;max-width:640px;margin:0 auto;
   text-align:center;opacity:0;transform:translateY(30px);transition:.9s ease}
 section.show{opacity:1;transform:none}</p>
-<p>/* Стеклянные прозрачные окна */
-.glass{background:var(&ndash;glass);backdrop-filter:blur(8px);
+<p>.glass{background:var(&ndash;glass);backdrop-filter:blur(8px);
   border:1px solid rgba(255,255,255,.6);border-radius:18px;
   padding:34px 26px;box-shadow:0 10px 30px rgba(150,130,110,.15)}</p>
 <p>nav{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.85);
@@ -52,7 +39,7 @@ h2{font-family:var(&ndash;script);font-size:44px;font-weight:400;margin-bottom:8
 p{font-weight:300;font-size:16px}</p>
 <p>.mono{font-family:var(&ndash;script);font-size:60px;color:var(&ndash;accent-d);
   width:150px;height:150px;line-height:150px;border:1px solid var(&ndash;accent);
-  border-radius:50%;margin:24px auto;background:var(&ndash;glass);backdrop-filter:blur(4px)}
+  border-radius:50%;margin:24px auto;background:var(&ndash;glass)}
 .names{font-family:var(&ndash;script);font-size:58px;margin:14px 0;color:var(&ndash;accent-d);line-height:1.1}
 .date{font-size:15px;letter-spacing:4px;text-transform:uppercase;margin-top:10px}</p>
 <p>.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px auto;color:var(&ndash;accent)}
@@ -68,7 +55,7 @@ p{font-weight:300;font-size:16px}</p>
 .couple h3{font-family:var(&ndash;serif);font-size:26px;font-weight:400}</p>
 <p>.quote{font-family:var(&ndash;serif);font-style:italic;font-size:24px;color:var(&ndash;accent-d);margin:22px 0}</p>
 <p>.timer{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
-.timer div{background:var(&ndash;glass);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.6);
+.timer div{background:var(&ndash;glass);border:1px solid rgba(255,255,255,.6);
   border-radius:12px;padding:16px 12px;min-width:74px}
 .timer span{display:block;font-family:var(&ndash;serif);font-size:32px;color:var(&ndash;accent-d)}
 .timer small{font-size:11px;letter-spacing:1px;text-transform:uppercase}</p>
@@ -90,7 +77,7 @@ p{font-weight:300;font-size:16px}</p>
 .field label{display:block;margin-bottom:7px;font-size:14px;letter-spacing:1px}
 textarea,input[type=text]{width:100%;padding:12px;border:1px solid var(&ndash;line);border-radius:8px;
   font-family:inherit;background:rgba(255,255,255,.7);font-size:15px}
-.q{text-align:left;margin:24px 0;background:var(&ndash;glass);backdrop-filter:blur(6px);
+.q{text-align:left;margin:24px 0;background:var(&ndash;glass);
   border:1px solid rgba(255,255,255,.6);border-radius:14px;padding:20px}
 .q p{font-weight:400;margin-bottom:10px;font-size:16px;color:var(&ndash;accent-d)}
 .opt{margin:8px 0;font-size:15px}
@@ -112,9 +99,9 @@ footer p{font-size:13px;letter-spacing:2px}
 </head>
 <body></p>
 <p><span class="flower" style="top:120px;left:12px">✿</span>
-<span class="flower" style="top:600px;right:16px">✿</span>
-<span class="flower" style="top:1400px;left:18px">✿</span>
-<span class="flower" style="top:2200px;right:14px">✿</span></p>
+<span class="flower" style="top:800px;right:16px">✿</span>
+<span class="flower" style="top:1600px;left:18px">✿</span>
+<span class="flower" style="top:2600px;right:14px">✿</span></p>
 <nav>
   <ul>
     <li><a href="#hero">Начало</a></li>
@@ -174,7 +161,54 @@ footer p{font-size:13px;letter-spacing:2px}
     </div>
   </div>
 </section>
-<p><section id="day2">
+<section id="day2">
   <div class="glass">
     <h2>День празднования</h2>
-    <div class="sub">06 сентября 2026 · База отдыха «Дача у Озера»</p>
+    <div class="sub">06 сентября 2026 · База отдыха «Дача у Озера»</div>
+    <div class="orn"><span>&#10047;</span></div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-dot">&#9200;</div><div class="tl-time">16:00</div><div class="tl-title">Общий сбор</div><div class="tl-note">Светлановская ул., 29, д. Удальцово</div></div>
+      <div class="tl-item"><div class="tl-dot">&#127870;</div><div class="tl-time">16:30 — 17:00</div><div class="tl-title">Welcome с ведущим</div></div>
+      <div class="tl-item"><div class="tl-dot">&#127869;</div><div class="tl-time">17:00 — 21:00</div><div class="tl-title">Застолье с ведущим</div></div>
+      <div class="tl-item"><div class="tl-dot">&#127925;</div><div class="tl-time">21:00 — 22:00</div><div class="tl-title">Дискотека</div></div>
+      <div class="tl-item"><div class="tl-dot">&#128167;</div><div class="tl-time">22:00 — 02:00</div><div class="tl-title">Банные процедуры</div><div class="tl-note">Не забудьте купальные принадлежности</div></div>
+    </div>
+  </div>
+</section>
+<section id="dress">
+  <div class="glass">
+    <h2>Дресс-код</h2>
+    <div class="sub">Пастельная палитра</div>
+    <div class="orn"><span>&#10047;</span></div>
+    <p>Будем благодарны, если при выборе нарядов вы придержитесь нежной пастельной гаммы: шалфейно-зелёный, оливковый, айвори, беж, мокко, пудрово-розовый и мягкий голубой.</p>
+    <div class="dress-imgs">
+      <img src="dress1.jpg" alt="Дресс-код">
+      <img src="dress2.jpg" alt="Дресс-код">
+      <img src="dress3.jpg" alt="Дресс-код">
+      <img src="dress4.jpg" alt="Дресс-код">
+    </div>
+    <div class="palette">
+      <i style="background:#e9e0d0"></i>
+      <i style="background:#d8c7b8"></i>
+      <i style="background:#c9b6a3"></i>
+      <i style="background:#b7c4a3"></i>
+      <i style="background:#9caf88"></i>
+      <i style="background:#e2c4c6"></i>
+      <i style="background:#b7c8d8"></i>
+      <i style="background:#8c7864"></i>
+    </div>
+  </div>
+</section>
+<p><section id="rsvp">
+  <div class="glass">
+    <h2>Подтверждение</h2>
+    <p>Пожалуйста, ответьте до 05 августа 2026</p></p>
+<pre><code>&lt;!-- Форма Web3Forms. Вставьте свой ключ вместо 98434d66-465b-4c35-a958-984219930f8c --&gt;
+&lt;form action=&quot;https://api.web3forms.com/submit&quot; method=&quot;POST&quot;&gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;access_key&quot; value=&quot;98434d66-465b-4c35-a958-984219930f8c&quot;&gt;
+  &lt;input type=&quot;hidden&quot; name=&quot;subject&quot; value=&quot;Новый ответ гостя со свадебного сайта&quot;&gt;
+  &lt;div class=&quot;field&quot;&gt;
+    &lt;label&gt;Ваше имя и фамилия&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;Имя&quot; placeholder=&quot;Введите ваше имя&quot; required&gt;
+  &lt;/div&gt;
+</code></pre>
