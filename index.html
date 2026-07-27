@@ -2,276 +2,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Свадьба Александра и Марии</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Marck+Script&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-<style>
-:root{
-  &ndash;text:#5f574d; &ndash;accent:#9caf88; &ndash;accent-d:#7d9068; &ndash;line:#e3ddd2;
-  &ndash;glass:rgba(255,253,250,.72);
-  &ndash;serif:&lsquo;Cormorant Garamond&rsquo;,Georgia,serif;
-  &ndash;script:&lsquo;Marck Script&rsquo;,cursive;
-  &ndash;sans:&lsquo;Jost&rsquo;,Arial,sans-serif;
+<title>Свадьба Александра и Марии</title></p>
+<p><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet"></p>
+<p><style>
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:Montserrat; color:#4b4b4b; overflow-x:hidden; }
+h1,h2,h3 { font-family:&lsquo;Cormorant Garamond&rsquo;; }</p>
+<p>nav {
+ position:fixed; top:0; width:100%;
+ background:rgba(255,255,255,0.7);
+ backdrop-filter: blur(10px);
+ display:flex; justify-content:center; gap:20px;
+ padding:12px; z-index:1000;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:var(&ndash;sans);color:var(&ndash;text);line-height:1.7;
-  background:linear-gradient(rgba(247,243,236,.55),rgba(239,233,223,.6)), url(&lsquo;fon.jpg&rsquo;);
-  background-size:cover;background-position:center;background-attachment:fixed;
+nav a { color:#6b5b57; text-decoration:none; }</p>
+<p>.hero {
+ height:100vh;
+ background:linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.85)),
+ url(&rsquo;<a href="https://images.unsplash.com/photo-1519741497674-611481863552'">https://images.unsplash.com/photo-1519741497674-611481863552&rsquo;</a>);
+ background-size:cover;
+ background-position:center;
+ display:flex; flex-direction:column; justify-content:center; align-items:center;
+ text-align:center;
+ position:relative;
+}</p>
+<p>.decor-left, .decor-right {
+ position:absolute;
+ top:0;
+ width:180px;
+ opacity:0.25;
 }
-.flower{position:absolute;font-size:26px;opacity:.5;color:var(&ndash;accent);pointer-events:none;z-index:1}
-section{position:relative;z-index:2;padding:70px 20px;max-width:640px;margin:0 auto;text-align:center;opacity:0;transform:translateY(30px);transition:.9s ease}
-section.show{opacity:1;transform:none}
-.glass{background:var(&ndash;glass);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.6);border-radius:18px;padding:34px 26px;box-shadow:0 10px 30px rgba(150,130,110,.15)}
-nav{position:sticky;top:0;z-index:50;background:rgba(247,243,236,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(&ndash;line)}
-nav ul{display:flex;justify-content:center;gap:20px;list-style:none;padding:15px;flex-wrap:wrap}
-nav a{color:var(&ndash;text);text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:.3s}
-nav a:hover{color:var(&ndash;accent-d)}
-h1{font-size:13px;letter-spacing:5px;text-transform:uppercase;font-weight:400;color:var(&ndash;accent-d)}
-h2{font-family:var(&ndash;script);font-size:44px;font-weight:400;margin-bottom:8px;color:var(&ndash;accent-d)}
-.sub{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(&ndash;accent-d);margin-bottom:22px}
-p{font-weight:300;font-size:16px}
-.mono{font-family:var(&ndash;script);font-size:60px;color:var(&ndash;accent-d);width:150px;height:150px;line-height:150px;border:1px solid var(&ndash;accent);border-radius:50%;margin:24px auto;background:var(&ndash;glass)}
-.names{font-family:var(&ndash;script);font-size:58px;margin:14px 0;color:var(&ndash;accent-d);line-height:1.1}
-.date{font-size:15px;letter-spacing:4px;text-transform:uppercase;margin-top:10px}
-.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px auto;color:var(&ndash;accent)}
-.orn:before,.orn:after{content:&ldquo;&rdquo;;height:1px;width:60px;background:var(&ndash;accent)}
-.orn span{font-size:20px}
-.ph{width:100%;max-width:360px;height:280px;margin:24px auto;border-radius:12px;background:rgba(220,210,195,.5);border:1px dashed var(&ndash;accent);display:flex;align-items:center;justify-content:center;color:var(&ndash;accent-d);font-size:13px}
-.round{width:170px;height:170px;border-radius:50%;background:rgba(220,210,195,.5);border:1px dashed var(&ndash;accent);display:flex;align-items:center;justify-content:center;color:var(&ndash;accent-d);font-size:12px;margin:0 auto 12px}
-.couple{display:flex;flex-wrap:wrap;justify-content:center;gap:36px}
-.couple h3{font-family:var(&ndash;serif);font-size:26px;font-weight:400}
-.quote{font-family:var(&ndash;serif);font-style:italic;font-size:24px;color:var(&ndash;accent-d);margin:22px 0}
-.timer{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
-.timer div{background:var(&ndash;glass);border:1px solid rgba(255,255,255,.6);border-radius:12px;padding:16px 12px;min-width:74px}
-.timer span{display:block;font-family:var(&ndash;serif);font-size:32px;color:var(&ndash;accent-d)}
-.timer small{font-size:11px;letter-spacing:1px;text-transform:uppercase}
-.tl{position:relative;text-align:left;margin-top:26px;padding-left:12px}
-.tl:before{content:&ldquo;&rdquo;;position:absolute;left:34px;top:14px;bottom:14px;width:1px;background:var(&ndash;accent)}
-.tl-item{position:relative;padding-left:66px;margin-bottom:30px}
-.tl-item:last-child{margin-bottom:0}
-.tl-dot{position:absolute;left:12px;top:2px;width:44px;height:44px;border-radius:50%;background:var(&ndash;glass);border:1px solid var(&ndash;accent);display:flex;align-items:center;justify-content:center;font-size:18px}
-.tl-time{font-family:var(&ndash;serif);font-size:26px;color:var(&ndash;accent-d);line-height:1.2}
-.tl-title{font-size:16px}
-.tl-note{font-size:13px;font-weight:300;color:var(&ndash;accent-d);margin-top:3px}
-.dress-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
-.dress-imgs img{width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(150,130,110,.2)}
-.palette{display:flex;justify-content:center;gap:9px;margin:18px 0;flex-wrap:wrap}
-.palette i{width:38px;height:38px;border-radius:50%;box-shadow:0 4px 10px rgba(150,130,110,.2)}
-.field{margin:16px 0;text-align:left}
-.field label{display:block;margin-bottom:7px;font-size:14px;letter-spacing:1px}
-textarea,input[type=text]{width:100%;padding:12px;border:1px solid var(&ndash;line);border-radius:8px;font-family:inherit;background:rgba(255,255,255,.7);font-size:15px}
-.q{text-align:left;margin:24px 0;background:var(&ndash;glass);border:1px solid rgba(255,255,255,.6);border-radius:14px;padding:20px}
-.q p{font-weight:400;margin-bottom:10px;font-size:16px;color:var(&ndash;accent-d)}
-.opt{margin:8px 0;font-size:15px}
-.opt input{margin-right:10px;accent-color:var(&ndash;accent)}
-.btn{background:var(&ndash;accent);color:#fff;border:none;padding:15px 46px;border-radius:30px;font-size:13px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;margin-top:22px;font-family:var(&ndash;sans);transition:.3s}
-.btn:hover{background:var(&ndash;accent-d)}
-.place{margin-bottom:44px}
-.place h3{font-family:var(&ndash;serif);font-size:28px;font-weight:400;margin-bottom:4px}
-.place .addr{font-size:14px;font-weight:300;color:var(&ndash;accent-d);letter-spacing:1px}
-.map{width:100%;height:310px;border:none;border-radius:12px;margin-top:16px;box-shadow:0 8px 24px rgba(150,130,110,.15)}
-.heart{color:var(&ndash;accent);font-size:24px;margin:14px 0}
-footer{position:relative;z-index:2;padding:60px 20px;text-align:center;color:var(&ndash;accent-d)}
-footer .mono{font-size:34px;width:110px;height:110px;line-height:110px}
-footer p{font-size:13px;letter-spacing:2px}
-@media(max-width:600px){
-  section{padding:45px 14px}
-  .glass{padding:24px 16px}
-  h2{font-size:36px}
-  .names{font-size:44px}
-  .mono{font-size:48px;width:120px;height:120px;line-height:120px}
-  .timer div{min-width:64px;padding:12px 8px}
-  .timer span{font-size:26px}
-  .dress-imgs{grid-template-columns:1fr}
-  nav ul{gap:12px;padding:12px}
-  nav a{font-size:11px;letter-spacing:1px}
-  .tl-item{padding-left:58px}
-  .map{height:260px}
+.decor-left { left:0; }
+.decor-right { right:0; transform:scaleX(-1); }</p>
+<p>.name span {
+ opacity:0;
+ display:inline-block;
+ transform:translateY(20px);
+ animation:letter 0.6s forwards;
+}</p>
+<p>@keyframes letter {
+ to { opacity:1; transform:translateY(0); }
+}</p>
+<p>.hero h1 { font-size:60px; color:#5c4a45; }
+.hero p { color:#7a6a64; }</p>
+<p>.section {
+ padding:100px 20px;
+ max-width:900px;
+ margin:auto;
+ text-align:center;
+}</p>
+<p>.card {
+ background:#fff;
+ border-radius:20px;
+ padding:30px;
+ box-shadow:0 15px 40px rgba(0,0,0,0.06);
+ transform:translateY(40px);
+ opacity:0;
+ transition:1s;
 }
-</style>
+.card.visible {
+ transform:translateY(0);
+ opacity:1;
+}</p>
+<p>.gallery { margin-top:30px; }
+.group { margin-bottom:40px; }</p>
+<p>.photos {
+ display:grid;
+ grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+ gap:10px;
+}</p>
+<p>.photos img {
+ width:100%;
+ height:180px;
+ object-fit:cover;
+ border-radius:12px;
+ transition:0.4s;
+ cursor:pointer;
+}</p>
+<p>.photos img:hover {
+ transform:scale(1.05);
+}</p>
+<p>input,select,textarea {
+ padding:12px; width:100%; border-radius:10px; border:1px solid #ddd;
+}</p>
+<p>button {
+ padding:14px; background:#c6a9a3; color:white; border:none; border-radius:10px;
+}</p>
+<p>iframe { width:100%; height:250px; border:none; margin-top:15px; }</p>
+<p></style>
 </head>
 <body></p>
-  <a href="#hero">Начало</a>
-<a href="#invite">Приглашение</a>
-<a href="#couple">О нас</a>
-<a href="#day1">День росписи</a>
-<a href="#day2">Празднование</a>
-<a href="#dress">Дресс-код</a>
-<a href="#rsvp">Анкета</a>
-<a href="#map">Локации</a>
-<section id="hero">
-  <div class="glass">
-    <h1>Приглашение на свадьбу</h1>
-    <div class="mono">A&amp;M</div>
-    <div class="names">Александр<br>и Мария</div>
-    <div class="orn"><span>✿</span></div>
-    <div class="date">05 — 06 сентября 2026</div>
-    <div class="timer" id="timer">
-      <div><span id="d">0</span><small>дней</small></div>
-      <div><span id="h">0</span><small>часов</small></div>
-      <div><span id="m">0</span><small>минут</small></div>
-      <div><span id="s">0</span><small>секунд</small></div>
-    </div>
-  </div>
-</section>
-<section id="invite">
-  <div class="glass">
-    <h2>Дорогой гость</h2>
-    <p>Мы рады сообщить вам, что состоится самое главное торжество в нашей жизни — день нашей свадьбы! Будем счастливы разделить этот особенный день вместе с вами.</p>
-    <div class="ph">Фото пары</div>
-    <p class="quote">Там, где посеяна любовь,<br>растёт радость</p>
-  </div>
-</section>
-<section id="couple">
-  <div class="glass">
-    <h2>Жених и невеста</h2>
-    <div class="couple">
-      <div><div class="round">Фото</div><h3>Александр</h3></div>
-      <div><div class="round">Фото</div><h3>Мария</h3></div>
-    </div>
-  </div>
-</section>
-<section id="day1">
-  <div class="glass">
-    <h2>Расписание</h2>
-    <div class="sub">05 сентября 2026 · день росписи</div>
-    <div class="orn"><span>✿</span></div>
-    <div class="tl">
-      <div class="tl-item"><div class="tl-dot">⏰</div><div class="tl-time">20:00</div><div class="tl-title">Общий сбор</div><div class="tl-note">Дворец бракосочетания № 1, Английская наб., 28</div></div>
-      <div class="tl-item"><div class="tl-dot">💍</div><div class="tl-time">20:20</div><div class="tl-title">Торжественная церемония</div></div>
-      <div class="tl-item"><div class="tl-dot">📷</div><div class="tl-time">20:40</div><div class="tl-title">Фотосессия во Дворце</div></div>
-      <div class="tl-item"><div class="tl-dot">🏙</div><div class="tl-time">21:00</div><div class="tl-title">Фотосессия по городу</div></div>
-      <div class="tl-item"><div class="tl-dot">🚤</div><div class="tl-time">21:30</div><div class="tl-title">Прогулка на катере</div></div>
-      <div class="tl-item"><div class="tl-dot">❤</div><div class="tl-time">22:30</div><div class="tl-title">Конец дня</div><div class="tl-note">Подготовка ко дню празднования</div></div>
-    </div>
-  </div>
-</section>
-<section id="day2">
-  <div class="glass">
-    <h2>День празднования</h2>
-    <div class="sub">06 сентября 2026 · База отдыха «Дача у Озера»</div>
-    <div class="orn"><span>✿</span></div>
-    <div class="tl">
-      <div class="tl-item"><div class="tl-dot">⏰</div><div class="tl-time">16:00</div><div class="tl-title">Общий сбор</div><div class="tl-note">Светлановская ул., 29, д. Удальцово</div></div>
-      <div class="tl-item"><div class="tl-dot">🍾</div><div class="tl-time">16:30 — 17:00</div><div class="tl-title">Welcome с ведущим</div></div>
-      <div class="tl-item"><div class="tl-dot">🍽</div><div class="tl-time">17:00 — 21:00</div><div class="tl-title">Застолье с ведущим</div></div>
-      <div class="tl-item"><div class="tl-dot">🎵</div><div class="tl-time">21:00 — 22:00</div><div class="tl-title">Дискотека</div></div>
-      <div class="tl-item"><div class="tl-dot">💧</div><div class="tl-time">22:00 — 02:00</div><div class="tl-title">Банные процедуры</div><div class="tl-note">Не забудьте купальные принадлежности</div></div>
-    </div>
-  </div>
-</section>
-<section id="dress">
-  <div class="glass">
-    <h2>Дресс-код</h2>
-    <div class="sub">Пастельная палитра</div>
-    <div class="orn"><span>✿</span></div>
-    <p>Будем благодарны, если при выборе нарядов вы придержитесь нежной пастельной гаммы: шалфейно-зелёный, оливковый, айвори, беж, мокко, пудрово-розовый и мягкий голубой.</p>
-    <div class="dress-imgs">
-      <img src="dress1.jpg" alt="Дресс-код">
-      <img src="dress2.jpg" alt="Дресс-код">
-      <img src="image.png" alt="Дресс-код">
-      <img src="dress4.jpg" alt="Дресс-код">
-    </div>
-    <div class="palette">
-      <i style="background:#e9e0d0"></i>
-      <i style="background:#d8c7b8"></i>
-      <i style="background:#c9b6a3"></i>
-      <i style="background:#b7c4a3"></i>
-      <i style="background:#9caf88"></i>
-      <i style="background:#e2c4c6"></i>
-      <i style="background:#b7c8d8"></i>
-      <i style="background:#8c7864"></i>
-    </div>
-  </div>
-</section>
-<section id="rsvp">
-  <div class="glass">
-    <h2>Подтверждение</h2>
-    <p>Пожалуйста, ответьте до 05 августа 2026</p>
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="98434d66-465b-4c35-a958-984219930f8c">
-      <input type="hidden" name="subject" value="Новый ответ гостя со свадебного сайта">
-      <div class="field">
-        <label>Ваше имя и фамилия</label>
-        <input type="text" name="Имя" placeholder="Введите ваше имя" required="">
-      </div>
-      <div class="field">
-        <label>Сообщение для жениха и невесты</label>
-        <textarea name="Сообщение" rows="3"></textarea>
-      </div>
-      <div class="q">
-        <p>Потребуется ли вам трансфер?</p>
-        <div class="opt"><label><input type="radio" name="Трансфер" value="Нет"> Нет</label></div>
-        <div class="opt"><label><input type="radio" name="Трансфер" value="Только до"> Только до торжества</label></div>
-        <div class="opt"><label><input type="radio" name="Трансфер" value="Только после"> Только после торжества</label></div>
-        <div class="opt"><label><input type="radio" name="Трансфер" value="До и после"> До и после торжества</label></div>
-      </div>
-      <div class="q">
-        <p>Есть ли особые предпочтения по еде?</p>
-        <div class="opt"><label><input type="radio" name="Еда" value="Нет"> Нет</label></div>
-        <div class="opt"><label><input type="radio" name="Еда" value="Не ем мясо"> Не ем мясо</label></div>
-        <div class="opt"><label><input type="radio" name="Еда" value="Не ем рыбу"> Не ем рыбу</label></div>
-        <div class="opt"><label><input type="radio" name="Еда" value="Вегетарианец"> Вегетарианец</label></div>
-      </div>
-      <div class="q">
-        <p>Какой алкоголь вы предпочитаете?</p>
-        <div class="opt"><label><input type="checkbox" name="Алкоголь красное" value="Красное вино"> Красное вино</label></div>
-        <div class="opt"><label><input type="checkbox" name="Алкоголь белое" value="Белое вино"> Белое вино</label></div>
-        <div class="opt"><label><input type="checkbox" name="Алкоголь шампанское" value="Шампанское"> Шампанское</label></div>
-        <div class="opt"><label><input type="checkbox" name="Алкоголь виски" value="Виски/коньяк"> Виски / коньяк</label></div>
-        <div class="opt"><label><input type="checkbox" name="Алкоголь водка" value="Водка"> Водка</label></div>
-        <div class="opt"><label><input type="checkbox" name="Без алкоголя" value="Без алкоголя"> Не буду пить алкоголь</label></div>
-      </div>
-      <div class="q">
-        <p>Будет ли с вами ребёнок?</p>
-        <div class="opt"><label><input type="radio" name="Ребёнок" value="Да"> Да</label></div>
-        <div class="opt"><label><input type="radio" name="Ребёнок" value="Нет"> Нет</label></div>
-      </div>
-      <div class="q">
-        <p>Останетесь ли на банные процедуры?</p>
-        <div class="opt"><label><input type="radio" name="Баня" value="Да"> Да</label></div>
-        <div class="opt"><label><input type="radio" name="Баня" value="Нет"> Нет</label></div>
-      </div>
-      <button type="submit" class="btn">Подтвердить</button>
-    </form>
-  </div>
-</section>
-<section id="map">
-  <div class="glass">
-    <h2>Как добраться</h2>
-    <div class="orn"><span>✿</span></div>
-    <div class="place">
-      <h3>Дворец бракосочетания № 1</h3>
-      <div class="addr">Санкт-Петербург, Английская набережная, 28</div>
-      <iframe class="map" src="https://yandex.ru/map-widget/v1/?text=Санкт-Петербург, Английская набережная, 28&amp;z=17"></iframe>
-    </div>
-    <div class="place">
-      <h3>База отдыха «Дача у Озера»</h3>
-      <div class="addr">деревня Удальцово, Светлановская улица, 29</div>
-      <iframe class="map" src="https://yandex.ru/map-widget/v1/?text=Удальцово, Светлановская улица, 29&amp;z=16"></iframe>
-    </div>
-    <p>Даже такой день может когда-то подойти к концу</p>
-    <div class="heart">❤</div>
-  </div>
-</section>
-<footer>
-  <div class="mono">A&amp;M</div>
-  <p>© 2026 — Александр и Мария</p>
-</footer>
+<p><audio id="music" loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b1c6c.mp3" type="audio/mpeg">
+</audio></p>
+<nav>
+<a href="#about">О нас</a>
+<a href="#story">История</a>
+<a href="#form">Анкета</a>
+</nav>
+<div class="hero" id="hero">
+<img class="decor-left" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
+<img class="decor-right" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
+<h1 class="name" id="names"></h1>
+<p id="guestName"></p>
+<p>5–6 сентября 2026</p>
+</div>
+<p>================ ЧАСТЬ 2 (галерея + блоки) ================</p>
+<div class="section" id="story">
+<div class="card">
+<h2>Наша история</h2>
+<div class="gallery">
+<div class="group">
+<h3>Предложение</h3>
+<div class="photos">
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+</div>
+</div>
+<div class="group">
+<h3>Наше детство</h3>
+<div class="photos">
+<img src="5.jpg">
+<img src="6.jpg">
+</div>
+</div>
+<div class="group">
+<h3>С собакой</h3>
+<div class="photos">
+<img src="7.jpg">
+<img src="8.jpg">
+<img src="9.jpg">
+</div>
+</div>
+<div class="group">
+<h3>Любовь</h3>
+<div class="photos">
+<img src="10.jpg">
+</div>
+</div>
+<p></div>
+</div>
+</div></p>
+<div class="section" id="about">
+<div class="card">
+<h2>Церемония</h2>
+<p>5 сентября 2026 в 20:20<br>Дворец бракосочетания №1</p>
+<iframe src="https://yandex.ru/map-widget/v1/?text=Дворец%20бракосочетания%201"></iframe>
+</div>
+</div>
+<div class="section">
+<div class="card">
+<h2>Празднование</h2>
+<p>6 сентября 2026<br>Дача у Озера<br>Светлановская 29</p>
+<iframe src="https://yandex.ru/map-widget/v1/?text=Светлановская%2029"></iframe>
+</div>
+</div>
+<p>================ ЧАСТЬ 3 (анкета + JS) ================</p>
+<div class="section" id="form">
+<div class="card">
+<h2>Анкета</h2>
+<form onsubmit="saveGuest(event)">
+<input id="name" placeholder="Ваше имя" required>
+<select id="status"><option>Приду</option><option>Не смогу</option></select>
+<select id="transfer"><option>Нужен трансфер</option><option>Не нужен</option></select>
+<textarea id="food" placeholder="Еда"></textarea>
+<textarea id="alcohol" placeholder="Алкоголь"></textarea>
+<button>Отправить</button>
+</form>
+</div>
+</div>
 <script>
-var target = new Date(2026, 8, 5, 20, 20, 0).getTime();
-function tick(){
-  var diff = target - new Date().getTime();
-  if(diff < 0) diff = 0;
-  document.getElementById('d').textContent = Math.floor(diff/(1000*60*60*24));
-  document.getElementById('h').textContent = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  document.getElementById('m').textContent = Math.floor((diff%(1000*60*60))/(1000*60));
-  document.getElementById('s').textContent = Math.floor((diff%(1000*60))/1000);
+// имя
+const params = new URLSearchParams(window.location.search);
+const guest = params.get('name');
+if(guest){ document.getElementById('guestName').innerText = guest; document.getElementById('name').value = guest; }
+// буквы
+const text = "Александр & Мария";
+const container = document.getElementById('names');
+text.split('').forEach((l,i)=>{
+ const s=document.createElement('span');
+ s.textContent=l;
+ s.style.animationDelay=i*0.05+'s';
+ container.appendChild(s);
+});
+// музыка
+window.addEventListener('click',()=>{
+ document.getElementById('music').play();
+},{once:true});
+// анимации
+const cards=document.querySelectorAll('.card');
+window.addEventListener('scroll',()=>{
+ cards.forEach(el=>{
+  const top=el.getBoundingClientRect().top;
+  if(top<window.innerHeight-100){ el.classList.add('visible'); }
+ });
+});
+// сохранение
+function saveGuest(e){
+ e.preventDefault();
+ let guests=JSON.parse(localStorage.getItem('guests'))||[];
+ guests.push({name:name.value,status:status.value});
+ localStorage.setItem('guests',JSON.stringify(guests));
+ alert('Сохранено');
 }
-tick(); setInterval(tick, 1000);
-var obs = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('show'); });
-}, {threshold:0.1});
-document.querySelectorAll('section').forEach(function(s){ obs.observe(s); });
 </script>
+<p></body>
+</html>
