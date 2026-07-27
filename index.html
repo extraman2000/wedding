@@ -17,7 +17,7 @@
             overflow-x: hidden;
         }
         
-        /* Фоновые изображения */
+        /* Фоновые изображения (едва заметные) */
         .background-photos {
             position: fixed;
             top: 0;
@@ -31,23 +31,22 @@
         
         .bg-photo {
             position: absolute;
-            width: 120px;
-            height: 120px;
             object-fit: cover;
             border-radius: 50%;
-            opacity: 0.04; /* Очень прозрачные */
             filter: blur(2px);
             transform: rotate(15deg);
+            /* Размер увеличен в 2 раза, непрозрачность увеличена в 2 раза (была 0.04, стала 0.08) */
+            opacity: 0.08;
         }
         
-        /* Распределение фото по экрану */
-        .bg-photo:nth-child(1) { top: 5%; left: 3%; width: 100px; height: 100px; }
-        .bg-photo:nth-child(2) { top: 15%; right: 5%; width: 130px; height: 130px; }
-        .bg-photo:nth-child(3) { bottom: 20%; left: 8%; width: 110px; height: 110px; }
-        .bg-photo:nth-child(4) { top: 40%; right: 2%; width: 90px; height: 90px; }
-        .bg-photo:nth-child(5) { bottom: 10%; right: 15%; width: 140px; height: 140px; }
-        .bg-photo:nth-child(6) { top: 60%; left: 5%; width: 80px; height: 80px; }
-        .bg-photo:nth-child(7) { bottom: 5%; left: 50%; width: 100px; height: 100px; }
+        /* Распределение фоновых фото (размеры увеличены вдвое по сравнению с предыдущим) */
+        .bg-photo:nth-child(1) { top: 5%; left: 3%; width: 200px; height: 200px; }
+        .bg-photo:nth-child(2) { top: 15%; right: 5%; width: 260px; height: 260px; }
+        .bg-photo:nth-child(3) { bottom: 20%; left: 8%; width: 220px; height: 220px; }
+        .bg-photo:nth-child(4) { top: 40%; right: 2%; width: 180px; height: 180px; }
+        .bg-photo:nth-child(5) { bottom: 10%; right: 15%; width: 280px; height: 280px; }
+        .bg-photo:nth-child(6) { top: 60%; left: 5%; width: 160px; height: 160px; }
+        .bg-photo:nth-child(7) { bottom: 5%; left: 50%; width: 200px; height: 200px; }
         
         .container {
             max-width: 800px;
@@ -91,9 +90,45 @@
         .timer { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
         .timer div { background: white; padding: 20px; border-radius: 15px; min-width: 80px; }
         .timer span { font-size: 2rem; font-weight: bold; color: #7c5c58; display: block; }
-        .card { background: rgba(255,255,255,0.7); border-radius: 20px; padding: 30px; margin: 30px 0; }
+        
+        .card {
+            background: rgba(255,255,255,0.7);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .card p { margin: 10px 0; line-height: 1.6; }
+        
         .schedule { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
         .schedule-col { background: white; border-radius: 15px; padding: 20px; flex: 1; min-width: 250px; }
+        
+        /* Блок с картами */
+        .maps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .map-container {
+            flex: 1 1 350px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+        }
+        .map-container h3 {
+            font-size: 1.2rem;
+            color: #7c5c58;
+            margin-bottom: 10px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 12px;
+        }
+        
         input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; }
         button { padding: 15px 40px; background: #d4a5a5; color: white; border: none; border-radius: 30px; font-size: 1.2rem; cursor: pointer; }
         
@@ -105,29 +140,29 @@
 <body>
     <!-- Фоновые изображения (едва заметные) -->
     <div class="background-photos">
-        <img src="1.jpg" class="bg-photo" alt="">
-        <img src="2.jpg" class="bg-photo" alt="">
-        <img src="3.jpg" class="bg-photo" alt="">
-        <img src="7.jpg" class="bg-photo" alt="">
-        <img src="8.jpg" class="bg-photo" alt="">
-        <img src="9.jpg" class="bg-photo" alt="">
-        <img src="10.jpg" class="bg-photo" alt="">
+        <img src="1" class="bg-photo" alt="">
+        <img src="2" class="bg-photo" alt="">
+        <img src="3" class="bg-photo" alt="">
+        <img src="7" class="bg-photo" alt="">
+        <img src="8" class="bg-photo" alt="">
+        <img src="9" class="bg-photo" alt="">
+        <img src="10" class="bg-photo" alt="">
     </div>
     <div class="container">
         <h1>Александр & Мария</h1>
-        <p style="font-size: 1.2rem; color: #8b7a76;">Приглашаем вас на нашу свадьбу!</p>
+        <p style="font-size: 1.2rem; color: #8b7a76; margin-bottom: 30px;">Приглашаем вас на нашу свадьбу!</p>
         
         <h2>Жених и невеста</h2>
         
-        <!-- Основные фото Александр и Мария -->
+        <!-- Основные фото – подписи теперь имена -->
         <div class="couple">
             <div class="person">
                 <img src="Alexandr" alt="Александр">
-                <span class="label">Жених</span>
+                <span class="label">Александр</span>
             </div>
             <div class="person">
                 <img src="Maria" alt="Мария">
-                <span class="label">Невеста</span>
+                <span class="label">Мария</span>
             </div>
         </div>
         
@@ -145,8 +180,29 @@
             <p>5 сентября 2026 в 20:20</p>
         </div>
         
-        <div class="card" style="font-style: italic;">
-            <p>"Дорогие гости! Для нас главное — ваше присутствие и улыбки."</p>
+        <!-- Новый текст пожелания -->
+        <div class="card" style="font-style: italic; background: rgba(255,255,255,0.5);">
+            <p>
+                «Приглашаем вас на нашу свадьбу! ❤️<br><br>
+                Ваше присутствие — самый ценный подарок для нас.<br><br>
+                Вместо букета мы будем благодарны за вклад в цветочную подписку: так радость от вашего внимания будет длиться намного дольше. 🌸<br><br>
+                До встречи в праздничный день!»
+            </p>
+        </div>
+        
+        <!-- Две геолокации с Яндекс Картами -->
+        <h2>Как добраться</h2>
+        <div class="maps">
+            <div class="map-container">
+                <h3>Дворец бракосочетания №1</h3>
+                <p style="margin-bottom:10px; color:#6b5d59;">Санкт-Петербург, Английская наб., 28</p>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=30.278117%2C59.929145&z=17&pt=30.278117%2C59.929145,pm2rdl&l=map&size=600,450" allowfullscreen="true"></iframe>
+            </div>
+            <div class="map-container">
+                <h3>Дача у Озера</h3>
+                <p style="margin-bottom:10px; color:#6b5d59;">Ленинградская обл., д. Удальцово, Светлановская ул., 29</p>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=30.450000%2C60.050000&z=15&pt=30.450000%2C60.050000,pm2rdl&l=map&size=600,450" allowfullscreen="true"></iframe>
+            </div>
         </div>
         
         <h2>Расписание</h2>
