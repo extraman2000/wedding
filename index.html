@@ -15,9 +15,36 @@
         .container { max-width: 800px; margin: 0 auto; text-align: center; }
         h1 { color: #7c5c58; font-size: 2.5rem; margin: 30px 0; }
         h2 { color: #7c5c58; margin: 40px 0 20px; }
-        .person { display: inline-block; margin: 20px 30px; }
-        .person img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .timer { display: flex; justify-content: center; gap: 20px; margin: 30px 0; }
+        
+        /* Горизонтальное расположение фотографий */
+        .couple {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .person {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .person img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+        .person .label {
+            font-size: 1.1rem;
+            color: #7c5c58;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        
+        .timer { display: flex; justify-content: center; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
         .timer div { background: white; padding: 20px; border-radius: 15px; min-width: 80px; }
         .timer span { font-size: 2rem; font-weight: bold; color: #7c5c58; display: block; }
         .card { background: rgba(255,255,255,0.7); border-radius: 20px; padding: 30px; margin: 30px 0; }
@@ -33,8 +60,18 @@
         <p style="font-size: 1.2rem; color: #8b7a76;">Приглашаем вас на нашу свадьбу!</p>
         
         <h2>Жених и невеста</h2>
-<img src="alexandr.jpg" alt="Александр">
-<img src="maria.jpg" alt="Мария">
+        
+        <!-- Горизонтальный блок с фото и подписями -->
+        <div class="couple">
+            <div class="person">
+                <img src="https://fotora.ru/uploaded/?ID=CQYEC27072026104646" alt="Александр">
+                <span class="label">Жених</span>
+            </div>
+            <div class="person">
+                <img src="https://fotora.ru/uploaded/?ID=SWDUN27072026104731" alt="Мария">
+                <span class="label">Невеста</span>
+            </div>
+        </div>
         
         <div class="timer">
             <div><span id="days">00</span>Дней</div>
