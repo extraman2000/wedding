@@ -3,386 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  Приглашение на свадьбу
-  
-  
-  
-  
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:&lsquo;Open Sans&rsquo;, sans-serif;
-      background: linear-gradient(135deg, #fdf6f0, #fce4ec);
-      color:#4a3f3b;
-      line-height:1.6;
-      padding:20px;
-      min-height:100vh;
-    }
-    .container { max-width: 960px; margin: 0 auto; }</p>
-
-<pre><code>/* Анимация при скролле */
-.scroll-animate {
-  opacity:0;
-  transform:translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.scroll-animate.visible {
-  opacity:1;
-  transform:translateY(0);
-}
-
-.section-title {
-  font-family:'Playfair Display', serif;
-  font-weight:600;
-  font-size:2.2rem;
-  text-align:center;
-  margin-bottom:40px;
-  color:#7c5c58;
-  position:relative;
-}
-.section-title::after {
-  content:&quot;✦&quot;;
-  display:block;
-  font-size:1.5rem;
-  color:#d4a5a5;
-  margin-top:8px;
-}
-
-/* Hero */
-.hero {
-  margin-bottom:60px;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hero:hover {
-  transform:translateY(-5px);
-  box-shadow:0 30px 60px rgba(0,0,0,0.15);
-}
-.hero img {
-  width:100%;
-  height:auto;
-  display:block;
-  max-height:500px;
-  object-fit:cover;
-}
-
-/* Жених и невеста */
-.couple {
-  display:flex;
-  flex-wrap:wrap;
-  gap:40px;
-  justify-content:center;
-  margin-bottom:70px;
-}
-.person {
-  text-align:center;
-  flex:1 1 250px;
-}
-.person img {
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 12px 24px rgba(0,0,0,0.1);
-  border:4px solid #fff;
-  transition:transform 0.4s ease, box-shadow 0.4s ease;
-}
-.person img:hover {
-  transform:scale(1.05);
-  box-shadow:0 18px 36px rgba(0,0,0,0.15);
-}
-.person h3 {
-  font-family:'Playfair Display', serif;
-  font-size:1.6rem;
-  margin:16px 0 6px;
-  color:#7c5c58;
-}
-.person p {
-  font-size:1rem;
-  color:#8b7a76;
-  font-style:italic;
-}
-
-/* Таймер */
-.timer-block {
-  text-align:center;
-  margin-bottom:70px;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter:blur(10px);
-  border-radius:24px;
-  padding:40px 20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  border:1px solid rgba(255,255,255,0.6);
-}
-.timer-block h2 {
-  font-family:'Playfair Display', serif;
-  font-size:2rem;
-  margin-bottom:20px;
-  color:#7c5c58;
-}
-.timer {
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
-.timer-item {
-  background:white;
-  border-radius:20px;
-  padding:20px 25px;
-  min-width:100px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
-}
-.timer-item .num {
-  font-family:'Playfair Display', serif;
-  font-size:3rem;
-  font-weight:700;
-  color:#7c5c58;
-  display:block;
-}
-.timer-item .label {
-  font-size:0.9rem;
-  color:#8b7a76;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-
-/* Карточка места росписи */
-.place-card {
-  background: rgba(255,255,255,0.5);
-  backdrop-filter:blur(10px);
-  border-radius:24px;
-  padding:30px;
-  text-align:center;
-  margin-bottom:60px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  border:1px solid rgba(255,255,255,0.6);
-}
-.place-card .icon { font-size:3rem; margin-bottom:10px; display:block; }
-.place-card h3 {
-  font-family:'Playfair Display', serif;
-  font-size:1.8rem;
-  color:#7c5c58;
-  margin-bottom:10px;
-}
-.place-card p {
-  font-size:1.1rem;
-  color:#6b5d59;
-  margin-bottom:5px;
-}
-
-/* Пожелание */
-.wish-block {
-  text-align:center;
-  font-family:'Playfair Display', serif;
-  font-style:italic;
-  font-size:1.3rem;
-  color:#7c5c58;
-  background: rgba(255,255,255,0.4);
-  border-radius:20px;
-  padding:30px;
-  margin-bottom:60px;
-  border:1px solid rgba(255,255,255,0.4);
-}
-
-/* Расписание (две колонки) */
-.schedule {
-  display:flex;
-  flex-wrap:wrap;
-  gap:40px;
-  justify-content:center;
-  margin-bottom:60px;
-}
-.schedule-col {
-  flex:1 1 300px;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter:blur(10px);
-  border-radius:24px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  border:1px solid rgba(255,255,255,0.6);
-}
-.schedule-col h4 {
-  font-family:'Playfair Display', serif;
-  font-size:1.8rem;
-  text-align:center;
-  color:#7c5c58;
-  margin-bottom:25px;
-}
-.schedule-item {
-  display:flex;
-  gap:15px;
-  margin-bottom:20px;
-  align-items:flex-start;
-}
-.schedule-item .time {
-  font-weight:600;
-  color:#8b7a76;
-  min-width:70px;
-}
-.schedule-item .desc {
-  flex:1;
-  color:#4a3f3b;
-}
-
-/* Карты */
-.maps {
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
-  justify-content:center;
-  margin-bottom:60px;
-}
-.map-box {
-  flex:1 1 400px;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter:blur(10px);
-  border-radius:24px;
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  border:1px solid rgba(255,255,255,0.6);
-}
-.map-box h4 {
-  font-family:'Playfair Display', serif;
-  font-size:1.4rem;
-  text-align:center;
-  color:#7c5c58;
-  margin-bottom:15px;
-}
-.map-box iframe {
-  width:100%;
-  height:250px;
-  border:0;
-  border-radius:16px;
-}
-
-/* Форма */
-.wishes {
-  background: rgba(255,255,255,0.5);
-  backdrop-filter:blur(10px);
-  border-radius:24px;
-  padding:40px 30px;
-  margin-bottom:40px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  border:1px solid rgba(255,255,255,0.6);
-}
-.wishes form {
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-.form-row {
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-}
-.form-row input { flex:1 1 200px; }
-input, textarea {
-  font-family:'Open Sans', sans-serif;
-  padding:14px 18px;
-  border:1px solid #e0d4d0;
-  border-radius:12px;
-  font-size:1rem;
-  background:rgba(255,255,255,0.8);
-  transition: border-color 0.3s, box-shadow 0.3s;
-  outline:none;
-  color:#4a3f3b;
-}
-input:focus, textarea:focus {
-  border-color:#d4a5a5;
-  box-shadow:0 0 0 3px rgba(212,165,165,0.2);
-}
-textarea { resize:vertical; min-height:100px; }
-.btn {
-  font-family:'Playfair Display', serif;
-  font-weight:600;
-  font-size:1.2rem;
-  padding:14px 30px;
-  background:linear-gradient(135deg, #d4a5a5, #c48989);
-  color:#fff;
-  border:none;
-  border-radius:50px;
-  cursor:pointer;
-  transition:transform 0.3s, box-shadow 0.3s;
-  align-self:center;
-  letter-spacing:1px;
-}
-.btn:hover {
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(196,137,137,0.4);
-}
-
-/* Адаптив */
-@media (max-width:600px) {
-  .section-title { font-size:1.6rem; }
-  .person img { width:150px; height:150px; }
-  .timer-item .num { font-size:2rem; }
-  .timer-item { min-width:70px; padding:15px; }
-  .maps { flex-direction:column; }
-  .map-box iframe { height:200px; }
-}
-</code></pre>
-
-<p>
-
-
-  
-
-<!-- Баннер с фото пары -->
-<div class="hero scroll-animate">
-  <img src="https://picsum.photos/seed/couple/900/500" alt="Александр и Мария">
-</div>
-
-<!-- Жених и невеста -->
-<section class="scroll-animate">
-  <h2 class="section-title">Жених и невеста</h2>
-  <div class="couple">
-    <div class="person">
-      <img src="https://picsum.photos/seed/groom2/400/400" alt="Александр">
-      <h3>Александр</h3>
-      <p>Жених</p>
+    <title>Приглашение на свадьбу</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #fdf6f0, #fce4ec);
+            color: #4a3f3b;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; text-align: center; }
+        h1 { color: #7c5c58; font-size: 2.5rem; margin: 30px 0; }
+        h2 { color: #7c5c58; margin: 40px 0 20px; }
+        .person { display: inline-block; margin: 20px 30px; }
+        .person img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .timer { display: flex; justify-content: center; gap: 20px; margin: 30px 0; }
+        .timer div { background: white; padding: 20px; border-radius: 15px; min-width: 80px; }
+        .timer span { font-size: 2rem; font-weight: bold; color: #7c5c58; display: block; }
+        .card { background: rgba(255,255,255,0.7); border-radius: 20px; padding: 30px; margin: 30px 0; }
+        .schedule { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .schedule-col { background: white; border-radius: 15px; padding: 20px; flex: 1; min-width: 250px; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; }
+        button { padding: 15px 40px; background: #d4a5a5; color: white; border: none; border-radius: 30px; font-size: 1.2rem; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Александр & Мария</h1>
+        <p style="font-size: 1.2rem; color: #8b7a76;">Приглашаем вас на нашу свадьбу!</p>
+        
+        <h2>Жених и невеста</h2>
+        <div class="person"><img src="https://fotora.ru/uploaded/?ID=CQYEC27072026104646" alt=""><h3>Александр</h3></div>
+        <div class="person"><img src="https://fotora.ru/uploaded/?ID=SWDUN27072026104731" alt=""><h3>Мария</h3></div>
+        
+        <div class="timer">
+            <div><span id="days">00</span>Дней</div>
+            <div><span id="hours">00</span>Часов</div>
+            <div><span id="minutes">00</span>Минут</div>
+            <div><span id="seconds">00</span>Секунд</div>
+        </div>
+        
+        <div class="card">
+            <h2>Место росписи</h2>
+            <p>Дворец бракосочетания №1</p>
+            <p>Английская наб., 28</p>
+            <p>5 сентября 2026 в 20:20</p>
+        </div>
+        
+        <div class="card" style="font-style: italic;">
+            <p>"Дорогие гости! Для нас главное — ваше присутствие и улыбки."</p>
+        </div>
+        
+        <h2>Расписание</h2>
+        <div class="schedule">
+            <div class="schedule-col">
+                <h3>5 сентября</h3>
+                <p><strong>19:30</strong> Сбор гостей</p>
+                <p><strong>20:20</strong> Церемония</p>
+                <p><strong>22:00</strong> Банкет</p>
+            </div>
+            <div class="schedule-col">
+                <h3>6 сентября</h3>
+                <p><strong>12:00</strong> Дача у Озера</p>
+                <p><strong>15:00</strong> Продолжение праздника</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Подтвердите присутствие</h2>
+            <form>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Ваши пожелания..." rows="4"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
     </div>
-    <div class="person">
-      <img src="https://picsum.photos/seed/bride2/400/400" alt="Мария">
-      <h3>Мария</h3>
-      <p>Невеста</p>
-    </div>
-  </div>
-</section>
-
-<!-- Таймер до росписи -->
-<section class="timer-block scroll-animate">
-  <h2>До самой важной встречи</h2>
-  <div class="timer" id="timer">
-    <div class="timer-item"><span class="num" id="days">00</span><span class="label">Дней</span></div>
-    <div class="timer-item"><span class="num" id="hours">00</span><span class="label">Часов</span></div>
-    <div class="timer-item"><span class="num" id="minutes">00</span><span class="label">Минут</span></div>
-    <div class="timer-item"><span class="num" id="seconds">00</span><span class="label">Секунд</span></div>
-  </div>
-</section>
-
-<!-- Место росписи -->
-<section class="place-card scroll-animate">
-  <span class="icon">💒</span>
-  <h3>Место росписи</h3>
-  <p>Дворец бракосочетания №1</p>
-  <p>Английская наб., 28</p>
-  <p>📅 5 сентября 2026 в 20:20</p>
-</section>
-
-<!-- Пожелание для гостей -->
-<section class="wish-block scroll-animate">
-  <p>Дорогие гости! Вместо цветов мы будем рады, если вы присоединитесь к нашему путешествию — для нас важнее всего ваше присутствие и улыбки. Но если вы хотите сделать сюрприз, мы с радостью примем ваш вклад в наш медовый месяц ❤️</p>
-</section>
-
-<!-- Расписание (две колонки) -->
-<section class="scroll-animate">
-  <h2 class="section-title">Расписание</h2>
-  <div class="schedule">
-    <!-- 5 сентября -->
-    <div class="schedule-col">
-      <h4>5 сентября (роспись)</h4>
-      <div class="schedule-item"><span class="time">19:30</span><span class="desc">Сбор гостей у Дворца бракосочетания</span></div>
-      <div class="schedule-item"><span class="time">20:20</span><span class="desc">Торжественная церемония</span></div
-
+    
+    <script>
+        function updateTimer() {
+            const target = new Date('2026-09-05T20:20:00');
+            const now = new Date();
+            const diff = target - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            document.getElementById('days').textContent = Math.floor(diff / (1000*60*60*24)).toString().padStart(2,'0');
+            document.getElementById('hours').textContent = Math.floor((diff/(1000*60*60))%24).toString().padStart(2,'0');
+            document.getElementById('minutes').textContent = Math.floor((diff/(1000*60))%60).toString().padStart(2,'0');
+            document.getElementById('seconds').textContent = Math.floor((diff/1000)%60).toString().padStart(2,'0');
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
