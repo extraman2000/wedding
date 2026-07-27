@@ -72,11 +72,11 @@ nav a { color:#6b5b57; text-decoration:none; }</p>
  gap:10px;
 }</p>
 <p>.photos img {
- width:100%;
- height:180px;
- object-fit:cover;
- border-radius:12px;
- transition:0.4s;
+width: 100%;
+height: 220px;
+object-fit: cover;
+border-radius: 12px;
+transition: 0.4s;
  cursor:pointer;
 }</p>
 <p>.photos img:hover {
@@ -101,6 +101,44 @@ nav a { color:#6b5b57; text-decoration:none; }</p>
 <a href="#form">Анкета</a>
 </nav>
 <div class="hero">
+ <div class="section">
+  <div class="card">
+    <h2>Немного о нас</h2>
+    <div class="couple-grid">
+      <div>
+        <h3>Александр в детстве</h3>
+        <img src="5.jpg">
+      </div>
+<pre><code>  &lt;div&gt;
+    &lt;h3&gt;Мария в детстве&lt;/h3&gt;
+    &lt;img src="6.jpg"&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;h3&gt;Мы вместе&lt;/h3&gt;
+    &lt;img src="7.jpg"&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;h3&gt;Любовь&lt;/h3&gt;
+    &lt;img src="10.jpg"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p></p></div>
+</div><p></p>
+<h2>3. Добавь стили для этого блока</h2>
+<p>В CSS добавь:</p>
+<p>.couple-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+ gap: 20px;
+ margin-top: 20px;
+}</p>
+<p>.couple-grid img {
+ width: 100%;
+ height: 260px;
+ object-fit: cover;
+ border-radius: 15px;
+}</p>
 <img class="decor-left" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
 <img class="decor-right" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
 <h1 class="name" id="names"></h1>
