@@ -6,8 +6,8 @@
 <p><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet"></p>
 <p><style>
 html { scroll-behavior: smooth; }
-body { margin:0; font-family:Montserrat; color:#4b4b4b; overflow-x:hidden; }
-h1,h2,h3 { font-family:&lsquo;Cormorant Garamond&rsquo;; }</p>
+body { margin:0; font-family:Montserrat, sans-serif; color:#4b4b4b; overflow-x:hidden; }
+h1,h2,h3 { font-family:&lsquo;Cormorant Garamond&rsquo;, serif; }</p>
 <p>nav {
  position:fixed; top:0; width:100%;
  background:rgba(255,255,255,0.7);
@@ -88,8 +88,8 @@ nav a { color:#6b5b57; text-decoration:none; }</p>
 <p>button {
  padding:14px; background:#c6a9a3; color:white; border:none; border-radius:10px;
 }</p>
-<p>iframe { width:100%; height:250px; border:none; margin-top:15px; }</p>
-<p></style>
+<p>iframe { width:100%; height:250px; border:none; margin-top:15px; }
+</style>
 </head>
 <body></p>
 <p><audio id="music" loop>
@@ -100,14 +100,13 @@ nav a { color:#6b5b57; text-decoration:none; }</p>
 <a href="#story">История</a>
 <a href="#form">Анкета</a>
 </nav>
-<div class="hero" id="hero">
+<div class="hero">
 <img class="decor-left" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
 <img class="decor-right" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
 <h1 class="name" id="names"></h1>
 <p id="guestName"></p>
 <p>5–6 сентября 2026</p>
 </div>
-<p>================ ЧАСТЬ 2 (галерея + блоки) ================</p>
 <div class="section" id="story">
 <div class="card">
 <h2>Наша история</h2>
@@ -158,7 +157,6 @@ nav a { color:#6b5b57; text-decoration:none; }</p>
 <iframe src="https://yandex.ru/map-widget/v1/?text=Светлановская%2029"></iframe>
 </div>
 </div>
-<p>================ ЧАСТЬ 3 (анкета + JS) ================</p>
 <div class="section" id="form">
 <div class="card">
 <h2>Анкета</h2>
@@ -173,11 +171,12 @@ nav a { color:#6b5b57; text-decoration:none; }</p>
 </div>
 </div>
 <script>
-// имя
 const params = new URLSearchParams(window.location.search);
 const guest = params.get('name');
-if(guest){ document.getElementById('guestName').innerText = guest; document.getElementById('name').value = guest; }
-// буквы
+if(guest){
+ document.getElementById('guestName').innerText = guest;
+ document.getElementById('name').value = guest;
+}
 const text = "Александр & Мария";
 const container = document.getElementById('names');
 text.split('').forEach((l,i)=>{
@@ -186,11 +185,9 @@ text.split('').forEach((l,i)=>{
  s.style.animationDelay=i*0.05+'s';
  container.appendChild(s);
 });
-// музыка
 window.addEventListener('click',()=>{
  document.getElementById('music').play();
 },{once:true});
-// анимации
 const cards=document.querySelectorAll('.card');
 window.addEventListener('scroll',()=>{
  cards.forEach(el=>{
@@ -198,7 +195,6 @@ window.addEventListener('scroll',()=>{
   if(top<window.innerHeight-100){ el.classList.add('visible'); }
  });
 });
-// сохранение
 function saveGuest(e){
  e.preventDefault();
  let guests=JSON.parse(localStorage.getItem('guests'))||[];
