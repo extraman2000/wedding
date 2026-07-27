@@ -305,5 +305,65 @@ textarea { resize:vertical; min-height:100px; }
 @media (max-width:600px) {
   .section-title { font-size:1.6rem; }
   .person img { width:150px; height:150px; }
-  .timer-item .num { font
+  .timer-item .num { font-size:2rem; }
+  .timer-item { min-width:70px; padding:15px; }
+  .maps { flex-direction:column; }
+  .map-box iframe { height:200px; }
+}
+</code></pre>
+<p></style>
+</head>
+<body>
+  <div class="container"></p>
+<pre><code>&lt;!-- Баннер с фото пары --&gt;
+&lt;div class=&quot;hero scroll-animate&quot;&gt;
+  &lt;img src=&quot;https://picsum.photos/seed/couple/900/500&quot; alt=&quot;Александр и Мария&quot;&gt;
+&lt;/div&gt;
+&lt;!-- Жених и невеста --&gt;
+&lt;section class=&quot;scroll-animate&quot;&gt;
+  &lt;h2 class=&quot;section-title&quot;&gt;Жених и невеста&lt;/h2&gt;
+  &lt;div class=&quot;couple&quot;&gt;
+    &lt;div class=&quot;person&quot;&gt;
+      &lt;img src=&quot;https://picsum.photos/seed/groom2/400/400&quot; alt=&quot;Александр&quot;&gt;
+      &lt;h3&gt;Александр&lt;/h3&gt;
+      &lt;p&gt;Жених&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;person&quot;&gt;
+      &lt;img src=&quot;https://picsum.photos/seed/bride2/400/400&quot; alt=&quot;Мария&quot;&gt;
+      &lt;h3&gt;Мария&lt;/h3&gt;
+      &lt;p&gt;Невеста&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Таймер до росписи --&gt;
+&lt;section class=&quot;timer-block scroll-animate&quot;&gt;
+  &lt;h2&gt;До самой важной встречи&lt;/h2&gt;
+  &lt;div class=&quot;timer&quot; id=&quot;timer&quot;&gt;
+    &lt;div class=&quot;timer-item&quot;&gt;&lt;span class=&quot;num&quot; id=&quot;days&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;label&quot;&gt;Дней&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;timer-item&quot;&gt;&lt;span class=&quot;num&quot; id=&quot;hours&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;label&quot;&gt;Часов&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;timer-item&quot;&gt;&lt;span class=&quot;num&quot; id=&quot;minutes&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;label&quot;&gt;Минут&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;timer-item&quot;&gt;&lt;span class=&quot;num&quot; id=&quot;seconds&quot;&gt;00&lt;/span&gt;&lt;span class=&quot;label&quot;&gt;Секунд&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Место росписи --&gt;
+&lt;section class=&quot;place-card scroll-animate&quot;&gt;
+  &lt;span class=&quot;icon&quot;&gt;💒&lt;/span&gt;
+  &lt;h3&gt;Место росписи&lt;/h3&gt;
+  &lt;p&gt;Дворец бракосочетания №1&lt;/p&gt;
+  &lt;p&gt;Английская наб., 28&lt;/p&gt;
+  &lt;p&gt;📅 5 сентября 2026 в 20:20&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- Пожелание для гостей --&gt;
+&lt;section class=&quot;wish-block scroll-animate&quot;&gt;
+  &lt;p&gt;Дорогие гости! Вместо цветов мы будем рады, если вы присоединитесь к нашему путешествию — для нас важнее всего ваше присутствие и улыбки. Но если вы хотите сделать сюрприз, мы с радостью примем ваш вклад в наш медовый месяц ❤️&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- Расписание (две колонки) --&gt;
+&lt;section class=&quot;scroll-animate&quot;&gt;
+  &lt;h2 class=&quot;section-title&quot;&gt;Расписание&lt;/h2&gt;
+  &lt;div class=&quot;schedule&quot;&gt;
+    &lt;!-- 5 сентября --&gt;
+    &lt;div class=&quot;schedule-col&quot;&gt;
+      &lt;h4&gt;5 сентября (роспись)&lt;/h4&gt;
+      &lt;div class=&quot;schedule-item&quot;&gt;&lt;span class=&quot;time&quot;&gt;19:30&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;Сбор гостей у Дворца бракосочетания&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;schedule-item&quot;&gt;&lt;span class=&quot;time&quot;&gt;20:20&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;Торжественная церемония&lt;/span&gt;&lt;/div
 </code></pre>
