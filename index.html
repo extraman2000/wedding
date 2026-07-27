@@ -6,13 +6,57 @@
     <title>Приглашение на свадьбу</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #fdf6f0, #fce4ec);
             color: #4a3f3b;
             padding: 20px;
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fdf6f0, #fce4ec);
+            overflow-x: hidden;
         }
-        .container { max-width: 800px; margin: 0 auto; text-align: center; }
+        
+        /* Фоновые изображения */
+        .background-photos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .bg-photo {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            opacity: 0.04; /* Очень прозрачные */
+            filter: blur(2px);
+            transform: rotate(15deg);
+        }
+        
+        /* Распределение фото по экрану */
+        .bg-photo:nth-child(1) { top: 5%; left: 3%; width: 100px; height: 100px; }
+        .bg-photo:nth-child(2) { top: 15%; right: 5%; width: 130px; height: 130px; }
+        .bg-photo:nth-child(3) { bottom: 20%; left: 8%; width: 110px; height: 110px; }
+        .bg-photo:nth-child(4) { top: 40%; right: 2%; width: 90px; height: 90px; }
+        .bg-photo:nth-child(5) { bottom: 10%; right: 15%; width: 140px; height: 140px; }
+        .bg-photo:nth-child(6) { top: 60%; left: 5%; width: 80px; height: 80px; }
+        .bg-photo:nth-child(7) { bottom: 5%; left: 50%; width: 100px; height: 100px; }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
         h1 { color: #7c5c58; font-size: 2.5rem; margin: 30px 0; }
         h2 { color: #7c5c58; margin: 40px 0 20px; }
         
@@ -52,23 +96,37 @@
         .schedule-col { background: white; border-radius: 15px; padding: 20px; flex: 1; min-width: 250px; }
         input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: 1px solid #ddd; }
         button { padding: 15px 40px; background: #d4a5a5; color: white; border: none; border-radius: 30px; font-size: 1.2rem; cursor: pointer; }
+        
+        @media (max-width: 600px) {
+            .bg-photo { display: none; } /* На телефонах убираем фоновые фото */
+        }
     </style>
 </head>
 <body>
+    <!-- Фоновые изображения (едва заметные) -->
+    <div class="background-photos">
+        <img src="1.jpg" class="bg-photo" alt="">
+        <img src="2.jpg" class="bg-photo" alt="">
+        <img src="3.jpg" class="bg-photo" alt="">
+        <img src="7.jpg" class="bg-photo" alt="">
+        <img src="8.jpg" class="bg-photo" alt="">
+        <img src="9.jpg" class="bg-photo" alt="">
+        <img src="10.jpg" class="bg-photo" alt="">
+    </div>
     <div class="container">
         <h1>Александр & Мария</h1>
         <p style="font-size: 1.2rem; color: #8b7a76;">Приглашаем вас на нашу свадьбу!</p>
         
         <h2>Жених и невеста</h2>
         
-        <!-- Горизонтальный блок с фото и подписями -->
+        <!-- Основные фото Александр и Мария -->
         <div class="couple">
             <div class="person">
-                <img src="https://fotora.ru/uploaded/?ID=CQYEC27072026104646" alt="Александр">
+                <img src="Alexandr" alt="Александр">
                 <span class="label">Жених</span>
             </div>
             <div class="person">
-                <img src="https://fotora.ru/uploaded/?ID=SWDUN27072026104731" alt="Мария">
+                <img src="Maria" alt="Мария">
                 <span class="label">Невеста</span>
             </div>
         </div>
