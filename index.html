@@ -6,149 +6,167 @@
 <title>Свадьба Александра и Марии</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 <style>
-html { scroll-behavior: smooth; }
-body { margin:0; font-family:Montserrat; color:#4b4b4b; overflow-x:hidden; }
-h1,h2 { font-family:'Cormorant Garamond'; }
-nav {
- position:fixed; top:0; width:100%;
- background:rgba(255,255,255,0.7);
- backdrop-filter: blur(10px);
- display:flex; justify-content:center; gap:20px;
- padding:12px; z-index:1000;
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background: #fff;
 }
-nav a { color:#6b5b57; text-decoration:none; }
-/* HERO */
+h1, h2 {
+  font-family: 'Cormorant Garamond', serif;
+}
+/* HERO PREMIUM */
 .hero {
- height:100vh;
- background:linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.85)),
- url('https://images.unsplash.com/photo-1519741497674-611481863552');
- background-size:cover;
- background-position:center;
- display:flex; flex-direction:column; justify-content:center; align-items:center;
- text-align:center;
- position:relative;
-}
-/* ДЕКОР */
-.decor-left, .decor-right {
- position:absolute;
- top:0;
- width:180px;
- opacity:0.25;
- pointer-events:none;
-}
-.decor-left { left:0; }
-.decor-right { right:0; transform: scaleX(-1); }
-/* ИМЕНА ПО БУКВАМ */
-.name span {
- opacity:0;
- display:inline-block;
- transform:translateY(20px);
- animation:letter 0.6s forwards;
-}
-@keyframes letter {
- to { opacity:1; transform:translateY(0); }
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+              url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
 }
 .hero h1 {
- font-size:60px;
- color:#5c4a45;
+  font-size: 64px;
+  margin: 0;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.5s ease forwards;
 }
-.hero p { color:#7a6a64; }
+.hero p {
+  font-size: 20px;
+  margin-top: 15px;
+  opacity: 0;
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+.subtitle {
+  margin-top: 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+/* COUNTDOWN PREMIUM */
+.countdown {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+}
+.countdown div {
+  min-width: 70px;
+  padding: 15px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  animation: fadeUp 1.5s ease forwards;
+}
+.countdown span {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+}
+/* SCROLL DOWN */
+.scroll {
+  position: absolute;
+  bottom: 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+/* SECTIONS */
 .section {
- padding:100px 20px;
- max-width:900px;
- margin:auto;
- text-align:center;
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
 }
-.card {
- background:#fff;
- border-radius:20px;
- padding:30px;
- box-shadow:0 15px 40px rgba(0,0,0,0.06);
- transform:translateY(40px);
- opacity:0;
- transition:1s;
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1.2s ease;
 }
-.card.visible {
- transform:translateY(0);
- opacity:1;
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-/* ПЛАВНЫЙ ПАРАЛЛАКС */
-.parallax {
- will-change: transform;
- transition: transform 0.2s linear;
+/* ANIMATIONS */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-input,select,textarea {
- padding:12px; width:100%; border-radius:10px; border:1px solid #ddd;
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
-button {
- padding:14px; background:#c6a9a3; color:white; border:none; border-radius:10px;
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  .countdown {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 </style>
 </head>
 <body>
-<audio id="music" loop>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b1c6c.mp3" type="audio/mpeg">
-</audio>
-<nav>
-<a href="#about">О нас</a>
-<a href="#form">Ответить</a>
-</nav>
-<div class="hero parallax" id="hero">
-<img class="decor-left" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
-<img class="decor-right" src="https://pngimg.com/uploads/flower/flower_PNG102.png">
-<h1 class="name" id="names"></h1>
-<p>5–6 сентября 2026</p>
+<div class="hero">
+  <h1>Александр & Мария</h1>
+  <p>5–6 сентября 2026</p>
+  <div class="subtitle">МЫ ЖДЁМ ВАС</div>
+  <div class="countdown">
+    <div><span id="days">0</span>дней</div>
+    <div><span id="hours">0</span>часов</div>
+    <div><span id="minutes">0</span>минут</div>
+    <div><span id="seconds">0</span>секунд</div>
+  </div>
+  <div class="scroll">↓ листайте вниз ↓</div>
 </div>
-<div class="section">
-<div class="card">
-<h2>Дорогие гости!</h2>
-<p>С огромной радостью приглашаем вас разделить с нами этот особенный день.</p>
+<div class="section fade">
+  <h2>Церемония</h2>
+  <p>
+    5 сентября 2026 в 20:20<br>
+    Дворец бракосочетания №1<br>
+    Английская набережная
+  </p>
 </div>
-</div>
-<div class="section">
-<div class="card">
-<h2>Церемония</h2>
-<p>5 сентября 2026 в 20:20<br>Дворец бракосочетания №1</p>
-</div>
-</div>
-<div class="section" id="form">
-<div class="card">
-<h2>Анкета</h2>
-<form onsubmit="event.preventDefault(); alert('Спасибо!');">
-<input placeholder="Ваше имя">
-<select><option>Приду</option><option>Не смогу</option></select>
-<button>Отправить</button>
-</form>
-</div>
+<div class="section fade">
+  <h2>Празднование</h2>
+  <p>
+    6 сентября 2026<br>
+    Площадка «Дача у Озера"
+  </p>
 </div>
 <script>
-// ИМЕНА ПО БУКВАМ
-const text = "Александр & Мария";
-const container = document.getElementById('names');
-text.split('').forEach((letter, i) => {
- const span = document.createElement('span');
- span.textContent = letter;
- span.style.animationDelay = i * 0.05 + 's';
- container.appendChild(span);
-});
-// МУЗЫКА (по клику — иначе браузеры блокируют)
-document.body.addEventListener('click', () => {
- document.getElementById('music').play();
-}, { once: true });
-// ПАРАЛЛАКС
+// COUNTDOWN
+const weddingDate = new Date("2026-09-05T20:20:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+}, 1000);
+// SCROLL ANIMATION
+const faders = document.querySelectorAll('.fade');
 window.addEventListener('scroll', () => {
- const scrolled = window.scrollY;
- document.getElementById('hero').style.transform = `translateY(${scrolled * 0.2}px)`;
-});
-// ПОЯВЛЕНИЕ КАРТОЧЕК
-const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
- cards.forEach(el => {
-   const top = el.getBoundingClientRect().top;
-   if(top < window.innerHeight - 100) {
-     el.classList.add('visible');
-   }
- });
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
 });
 </script>
 </body>
